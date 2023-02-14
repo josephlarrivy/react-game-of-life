@@ -4,7 +4,6 @@ import Square from "./Square";
 
 const Row = ({row, table, setTable, xIndex, sum, setSum}) => {
 
-  // console.log(xIndex)
 
   return (
     <div>

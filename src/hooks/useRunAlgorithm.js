@@ -9,9 +9,7 @@ const useRunAlgorithm = () => {
 
 	const run = (table) => {
 
-		// console.log(table)
 		const newTable = JSON.parse(JSON.stringify(table))
-		// console.log(newTable)
 		
 		const evaluateCell = (i, k) => {
 			let sumOfLiveNeighbors = 0;
@@ -50,43 +48,31 @@ const useRunAlgorithm = () => {
 
 					if (value == 1 && sumOfLiveNeighbors < 2) {
 						newTable[i][k] = 0;
-						console.log('value', value, 'i', i, 'k', k, 'sum', sumOfLiveNeighbors)
-						// return table;
+						
 					} else if (value == 1 && sumOfLiveNeighbors == 2 ) {
 						newTable[i][k] = 1;
-						console.log('value', value, 'i', i, 'k', k, 'sum', sumOfLiveNeighbors)
-						// return table;
+						
 					} else if (value == 1 && sumOfLiveNeighbors == 3) {
 						newTable[i][k] = 1;
-						console.log('value', value, 'i', i, 'k', k, 'sum', sumOfLiveNeighbors)
-						// return table;
+						
 					} else if (value == 1 && sumOfLiveNeighbors > 3) {
 						newTable[i][k] = 0;
-						console.log('value', value, 'i', i, 'k', k, 'sum', sumOfLiveNeighbors)
-						// return table;
+						
 					} else if (value == 0 && sumOfLiveNeighbors < 3) {
 						newTable[i][k] = 0;
-						console.log('value', value, 'i', i, 'k', k, 'sum', sumOfLiveNeighbors)
-						// return table;
+						
 					} else if (value == 0 && sumOfLiveNeighbors == 3) {
 						newTable[i][k] = 1;
-						console.log('value', value, 'i', i, 'k', k, 'sum', sumOfLiveNeighbors)
-						// return table;
+						
 					} else if (value == 0 && sumOfLiveNeighbors > 3) {
 						newTable[i][k] = 0;
-						console.log('value', value, 'i', i, 'k', k, 'sum', sumOfLiveNeighbors)
-						// return table;
+						
 					}
-
 				}
 			}
 			return newTable;
 		}
 		return loopTable(table)
-
-
-
-		// return newTable;
 	}
 	return [run]
 }
