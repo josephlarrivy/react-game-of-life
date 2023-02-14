@@ -1,19 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import './styles.css'
 
-import initialTable from "./data";
 import Row from "./Row";
-import useToggleValue from "./hooks/useToggleValue";
 
-const Board = () => {
-
-  const [table, setTable] = useState(initialTable)
-
-
-  return(
+const Board = ({table, setTable}) => {
+  
+  return (
     <div className="board">
       {table.map((row, index) => {
-        return <Row row={row} table={table} setTable={setTable}/>
+        return <Row row={row} table={table} setTable={setTable} xIndex={index}/>
       })}
     </div>
   )
