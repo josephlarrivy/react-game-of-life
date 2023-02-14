@@ -13,7 +13,7 @@ const Board = () => {
   return(
     <div className="board">
       {table.map((row, index) => {
-        return <Row row={row} />
+        return <Row row={row} table={table} setTable={setTable}/>
       })}
     </div>
   )
