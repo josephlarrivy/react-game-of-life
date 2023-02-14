@@ -10,17 +10,19 @@ function App() {
   const [table, setTable] = useState(initialTable);
   const [sum, setSum] = useState(0);
   const [run] = useRunAlgorithm();
-
-
-  const [test, setTest] = useState(1)
-  useEffect(() => {
+  const [test, setTest] = useState(false)
+  
+  if (test == true) {
+    console.log(table)
+    setTest(false)
     let newTable = run(table)
-    console.log(newTable)
-  }, [test])
+    setTable(newTable)
+    setSum(sum+1)
+  }
 
   
   const handleAppClick = () => {
-    setTest(test+1)
+    setTest(true)
   } 
 
     
