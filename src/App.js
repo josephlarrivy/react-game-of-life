@@ -14,8 +14,14 @@ function App() {
   const [step, setStep] = useState(false)
   const [onOrOff, setOnOrOff] = useState('off')
 
-  
 
+  if (onOrOff == 'on') {
+    const timer = setTimeout(() => {
+      let newTable = run(table)
+      setTable(newTable)
+    }, 300);
+  }
+  
   if (step == true) {
     setStep(false)
     let newTable = run(table)
@@ -23,17 +29,22 @@ function App() {
     setSum(sum+1)
   }
 
-  const handleAppClick = () => {
-    setStep(true)
-  } 
+  const handleAppClick = () => {setStep(true)} 
 
-  const reset = () => {
-    window.location.reload(false);
+  const reset = () => {window.location.reload(false);}
+
+  const runOnTimer = () => {
+    if (onOrOff == 'off') {
+      setOnOrOff('on')
+    } else {
+      setOnOrOff('off')
+    }
   }
   
 
   return (
     <div className="App">
+      <button onClick={runOnTimer}>Run/Pause</button>
       <button onClick={handleAppClick}>Step</button>
       <button onClick={reset}>Reset</button>
       <Board table={table} setTable={setTable} sum={sum} setSum={setSum}/>
