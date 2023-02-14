@@ -41,15 +41,26 @@ function App() {
     }
   }
   
+  if (onOrOff == 'off') {
+    return (
+      <div className="App">
+        <button onClick={runOnTimer}>Run</button>
+        <button onClick={handleAppClick}>Step</button>
+        <button onClick={reset}>Reset</button>
+        <Board table={table} setTable={setTable} sum={sum} setSum={setSum} />
+      </div>
+    );
+  } if (onOrOff == 'on') {
+    return (
+      <div className="App">
+        <button onClick={runOnTimer}>Pause</button>
+        <button onClick={reset}>Reset</button>
+        <Board table={table} setTable={setTable} sum={sum} setSum={setSum} />
+      </div>
+    );
+  }
 
-  return (
-    <div className="App">
-      <button onClick={runOnTimer}>Run/Pause</button>
-      <button onClick={handleAppClick}>Step</button>
-      <button onClick={reset}>Reset</button>
-      <Board table={table} setTable={setTable} sum={sum} setSum={setSum}/>
-    </div>
-  );
+  
 
 }
 
