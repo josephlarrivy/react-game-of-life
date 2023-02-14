@@ -1,16 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import './styles.css'
 
-import table from "./data";
+import initialTable from "./data";
 import Row from "./Row";
+import useToggleValue from "./hooks/useToggleValue";
 
 const Board = () => {
 
-  console.log(table)
+  const [table, setTable] = useState(initialTable)
+
 
   return(
     <div className="board">
-      {table.map((row) => {
+      {table.map((row, index) => {
         return <Row row={row} />
       })}
     </div>

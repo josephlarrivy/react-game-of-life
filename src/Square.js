@@ -5,18 +5,30 @@ const Square = ({b}) => {
   const [onOrOff, setOnOrOff] = useState('off')
 
 
-  const handleClick = () => {
-    if (onOrOff == 'off') {
-      setOnOrOff('on')
-    } else if (onOrOff == 'on') {
-      setOnOrOff('off')
-    }
+  const handleClick = (e) => {
+    console.log('click')
   }
 
-  return (
-    <div className={onOrOff} onClick={handleClick}>
-    </div>
-  )
+  if (b == 0) {
+    return (
+      <div 
+        className="off"
+        onClick={handleClick}
+        >
+      </div>
+    )
+  } else if (b == 1) {
+    return (
+      <div
+        className="on"
+        onClick={handleClick}
+        >
+      </div>
+    )
+  }
+
+
+  
 }
 
 export default Square;

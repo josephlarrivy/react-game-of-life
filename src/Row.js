@@ -7,7 +7,7 @@ const Row = ({row}) => {
 
   return (
     <div>
-      {row.map((b) => {
+      {row.map((b, index) => {
         return <Square b={b} />
       })}
     </div>
