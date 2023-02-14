@@ -25,8 +25,17 @@
   display: inline-block;
 }
 
-.on{
+.on {
   background-color: #c7efcf;
+  height: 3vh;
+  width: 3vh;
+  margin-left: 4px;
+  margin-top: 1px;
+  display: inline-block;
+}
+
+.border {
+  background-color: #333745;
   height: 3vh;
   width: 3vh;
   margin-left: 4px;

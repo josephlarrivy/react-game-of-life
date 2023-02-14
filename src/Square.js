@@ -2,17 +2,10 @@ import React, {useState, useEffect} from "react";
 
 const Square = ({b, table, setTable, xIndex, yIndex, sum, setSum}) => {
 
-  const [onOrOff, setOnOrOff] = useState('off')
-
-    // useEffect(() => {
-    //   for (let val of table[xIndex]) {
-    //     setSum(sum + val)
-    //     console.log(sum)
-    //   }
-    // }, [])
 
   const handleClick = (e) => {
     console.log(table[xIndex][yIndex])
+    console.log(xIndex, yIndex)
     if (table[xIndex][yIndex] == 0) {
       table[xIndex][yIndex] = 1;
       setTable(table);
@@ -41,6 +34,13 @@ const Square = ({b, table, setTable, xIndex, yIndex, sum, setSum}) => {
         className="on"
         onClick={handleClick}
         >
+      </div>
+    )
+  } else if (b == 2) {
+    return (
+      <div
+        className="border"
+      >
       </div>
     )
   }
