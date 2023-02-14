@@ -15,7 +15,7 @@
 // ]
 
 
-const useRunAlgorithm = (table) => {
+const useRunAlgorithm = () => {
 	const run = (table) => {
 		const evaluateCell = (i, k) => {
 			let sumOfLiveNeighbors = 0;
@@ -54,7 +54,10 @@ const useRunAlgorithm = (table) => {
 				if (value == 1 && sumOfLiveNeighbors < 2) {
 					table[i][k] = 0;
 					// return table;
-				} else if (value == 1 && sumOfLiveNeighbors <= 3 ) {
+				} else if (value == 1 && sumOfLiveNeighbors == 2 ) {
+					table[i][k] = 1;
+					// return table;
+				} else if (value == 1 && sumOfLiveNeighbors == 3) {
 					table[i][k] = 1;
 					// return table;
 				} else if (value == 1 && sumOfLiveNeighbors > 3) {
@@ -63,16 +66,16 @@ const useRunAlgorithm = (table) => {
 				} else if (value == 0 && sumOfLiveNeighbors == 3) {
 					table[i][k] = 1;
 					// return table;
-				} else {
-					table[i][k] = table[i][k];
+				// } else {
+				// 	table[i][k] = table[i][k];
 					// return table;
 				}
 			}
 		}
 		console.log(table)
+		return table
 	}
 	return [run]
 }
-// useRunAlgorithm(table)
 
 export default useRunAlgorithm;
