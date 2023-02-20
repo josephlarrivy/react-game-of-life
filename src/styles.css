@@ -18,27 +18,27 @@
 
 .off {
   background-color: #e63462;
-  height: 3vh;
-  width: 3vh;
-  margin-left: 4px;
+  height: 2vh;
+  width: 2vh;
+  margin-left: 3px;
   margin-top: 1px;
   display: inline-block;
 }
 
 .on {
   background-color: #c7efcf;
-  height: 3vh;
-  width: 3vh;
-  margin-left: 4px;
+  height: 2vh;
+  width: 2vh;
+  margin-left: 3px;
   margin-top: 1px;
   display: inline-block;
 }
 
 .border {
   background-color: #333745;
-  height: 3vh;
-  width: 3vh;
-  margin-left: 4px;
+  height: 2vh;
+  width: 2vh;
+  margin-left: 3px;
   margin-top: 1px;
   display: inline-block;
 }

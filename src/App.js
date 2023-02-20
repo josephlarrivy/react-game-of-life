@@ -19,7 +19,7 @@ function App() {
     const timer = setTimeout(() => {
       let newTable = run(table)
       setTable(newTable)
-    }, 300);
+    }, 400);
   }
   
   if (step == true) {
